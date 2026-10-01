@@ -36,14 +36,14 @@ The VPC contains:
 The EC2 web server is deployed in a public subnet, while the RDS database is deployed using private subnets.
 
 ### Screenshot
-`[Insert Screenshot – VPC Configuration]`
+![VPC Configuration](vpc%20config.png)
 
 ## 5. VPC Resource Map
 
 The VPC resource map shows the public and private subnets, route tables and Internet Gateway used in the two-tier architecture.
 
 ### Screenshot
-`[Insert Screenshot – VPC Resource Map]`
+![VPC Resource Map](02-VPC-Resource-Map.png)
 
 ## 6. EC2 Web Server Configuration
 
@@ -66,10 +66,10 @@ The web page displays:
 - EC2 Web Server
 
 ### Screenshot
-`[Insert Screenshot – EC2 Running Instance]`
+![EC2 Running Instance](05-EC2-Running.png)
 
 ### Web Page Screenshot
-`[Insert Screenshot – EC2 Web Page]`
+![EC2 Web Page](06-EC2-Web-Page.png)
 
 ## 7. EC2 Security Group
 
@@ -81,7 +81,7 @@ The web page displays:
 | HTTP | 80 | 0.0.0.0/0 |
 
 ### Screenshot
-`[Insert Screenshot – EC2 Security Group]`
+![EC2 Security Group](03-EC2-Security-Group.png)
 
 ## 8. RDS Database Configuration
 
@@ -94,7 +94,7 @@ The web page displays:
 The RDS database is configured inside the same VPC and is not publicly accessible.
 
 ### Screenshot
-`[Insert Screenshot – RDS Available]`
+![RDS Available](07-RDS-Available.png)
 
 ## 9. RDS Security Group
 
@@ -107,21 +107,21 @@ The RDS database is configured inside the same VPC and is not publicly accessibl
 The database accepts connections only from the EC2 Security Group.
 
 ### Screenshot
-`[Insert Screenshot – RDS Security Group]`
+![RDS Security Group](04-RDS-Security-Group.png)
 
 ## 10. RDS Connectivity
 
 The RDS database uses port `3306` and is not publicly accessible. The RDS endpoint was used from the EC2 instance to establish a secure database connection.
 
 ### Screenshot
-`[Insert Screenshot – RDS Connectivity & Security]`
+![RDS Connectivity & Security](08-RDS-Connectivity.png)
 
 ### EC2 to RDS Connection
 
 The MariaDB client was installed on EC2 and the RDS endpoint was used to connect securely to the database.
 
 ### Screenshot
-`[Insert Screenshot – EC2 to RDS Connection]`
+![EC2 to RDS Connection](09-EC2-RDS-Connection.png)
 
 ## 11. Database Testing
 
@@ -157,7 +157,7 @@ SELECT * FROM students;
 ```
 
 ### Screenshot
-`[Insert Screenshot – Database Testing Output]`
+![Database Testing](10-Database-Testing.png)
 
 ## 12. Security Implementation
 
@@ -195,7 +195,7 @@ RDS MariaDB
 ```
 
 ### Architecture Diagram
-`[Insert Architecture Diagram Here]`
+![AWS Architecture Diagram](architecture-diagram.png)
 
 ## 14. Testing
 
