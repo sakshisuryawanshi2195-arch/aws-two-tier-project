@@ -45,6 +45,9 @@ The VPC resource map shows the public and private subnets, route tables and Inte
 ### Screenshot
 ![VPC Resource Map](resource%20map1.png)
 
+![RDS Available](rs2.png)
+
+
 
 ## 6. EC2 Web Server Configuration
 
