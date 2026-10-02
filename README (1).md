@@ -12,42 +12,40 @@ The EC2 server is placed in a public subnet, while the RDS database is placed in
 
 ## 3. AWS Services Used
 
-- Amazon VPC
-- Amazon EC2
-- Amazon RDS
-- Security Groups
-- Internet Gateway
-- MariaDB
+* Amazon VPC
+* Amazon EC2
+* Amazon RDS
+* Security Groups
+* Internet Gateway
+* MariaDB
 
 ## 4. VPC Configuration
 
-**VPC Name:** `two-tier-project-vpc-vpc`  
-**VPC ID:** `vpc-028563d782385ffb3`  
-**IPv4 CIDR:** `10.0.0.0/16`  
+**VPC Name:** `two-tier-project-vpc-vpc`
+**VPC ID:** `vpc-028563d782385ffb3`
+**IPv4 CIDR:** `10.0.0.0/16`
 **Region:** `eu-north-1`
 
 The VPC contains:
 
-- 2 Public Subnets
-- 2 Private Subnets
-- Internet Gateway
-- Route Tables
+* 2 Public Subnets
+* 2 Private Subnets
+* Internet Gateway
+* Route Tables
 
 The EC2 web server is deployed in a public subnet, while the RDS database is deployed using private subnets.
 
 ### Screenshot
-![VPC Configuration](vpc%20config.png)
+
+![VPC Configuration](https://raw.githubusercontent.com/sakshisuryawanshi2195-arch/aws-two-tier-project/main/images/vpc%20config.png)
 
 ## 5. VPC Resource Map
 
 The VPC resource map shows the public and private subnets, route tables and Internet Gateway used in the two-tier architecture.
 
 ### Screenshot
-![VPC Resource Map](resource%20map1.png)
 
-![RDS Available](rs2.png)
-
-
+![VPC Resource Map](https://raw.githubusercontent.com/sakshisuryawanshi2195-arch/aws-two-tier-project/main/images/resource%20map1.png)
 
 ## 6. EC2 Web Server Configuration
 
@@ -65,74 +63,74 @@ A web page was created in `/var/www/html/index.html`.
 
 The web page displays:
 
-- AWS Two Tier Application
-- Web Server is running successfully.
-- EC2 Web Server
+* AWS Two Tier Application
+* Web Server is running successfully.
+* EC2 Web Server
 
-### Screenshot
-![EC2 Running](ec2-running.png)
+### EC2 Running Screenshot
 
+![EC2 Running](https://raw.githubusercontent.com/sakshisuryawanshi2195-arch/aws-two-tier-project/main/images/ec2-running.png)
 
 ### Web Page Screenshot
-![EC2 Web Page](ec2-web-app.png)
 
+![EC2 Web Page](https://raw.githubusercontent.com/sakshisuryawanshi2195-arch/aws-two-tier-project/main/images/ec2-web-app.png)
 
 ## 7. EC2 Security Group
 
 **Security Group:** `two-tier-ec2-sg`
 
-| Type | Port | Source |
-|---|---:|---|
-| SSH | 22 | My IP |
-| HTTP | 80 | 0.0.0.0/0 |
+| Type | Port | Source    |
+| ---- | ---: | --------- |
+| SSH  |   22 | My IP     |
+| HTTP |   80 | 0.0.0.0/0 |
 
 ### Screenshot
-![EC2 Security Group](ec2-sg.png)
 
+![EC2 Security Group](https://raw.githubusercontent.com/sakshisuryawanshi2195-arch/aws-two-tier-project/main/images/ec2-sg.png)
 
 ## 8. RDS Database Configuration
 
-**DB Instance Identifier:** `two-tier-rds`  
-**Database Engine:** MariaDB  
-**Instance Class:** `db.t4g.micro`  
-**Port:** `3306`  
+**DB Instance Identifier:** `two-tier-rds`
+**Database Engine:** MariaDB
+**Instance Class:** `db.t4g.micro`
+**Port:** `3306`
 **Public Access:** No
 
 The RDS database is configured inside the same VPC and is not publicly accessible.
 
 ### Screenshot
-![RDS Available](rs2.png)
 
+![RDS Available](https://raw.githubusercontent.com/sakshisuryawanshi2195-arch/aws-two-tier-project/main/images/rs2.png)
 
 ## 9. RDS Security Group
 
 **Security Group:** `two-tier-rds-sg`
 
-| Type | Port | Source |
-|---|---:|---|
+| Type         | Port | Source            |
+| ------------ | ---: | ----------------- |
 | MySQL/Aurora | 3306 | `two-tier-ec2-sg` |
 
 The database accepts connections only from the EC2 Security Group.
 
 ### Screenshot
-![RDS Security Group](rds-sg.png)
 
+![RDS Security Group](https://raw.githubusercontent.com/sakshisuryawanshi2195-arch/aws-two-tier-project/main/images/rds-sg.png)
 
 ## 10. RDS Connectivity
 
 The RDS database uses port `3306` and is not publicly accessible. The RDS endpoint was used from the EC2 instance to establish a secure database connection.
 
 ### Screenshot
-![RDS Connectivity](rds-connectivity.png)
 
+![RDS Connectivity](https://raw.githubusercontent.com/sakshisuryawanshi2195-arch/aws-two-tier-project/main/images/rds-connectivity.png)
 
 ### EC2 to RDS Connection
 
 The MariaDB client was installed on EC2 and the RDS endpoint was used to connect securely to the database.
 
 ### Screenshot
-![EC2 to RDS Connection](rds-connection.png)
 
+![EC2 to RDS Connection](https://raw.githubusercontent.com/sakshisuryawanshi2195-arch/aws-two-tier-project/main/images/rds-connection.png)
 
 ## 11. Database Testing
 
@@ -168,17 +166,17 @@ SELECT * FROM students;
 ```
 
 ### Screenshot
-![Database Testing](database-testing.png)
 
+![Database Testing](https://raw.githubusercontent.com/sakshisuryawanshi2195-arch/aws-two-tier-project/main/images/database-testing.png)
 
 ## 12. Security Implementation
 
-- EC2 is placed in a public subnet for web access.
-- RDS is not publicly accessible.
-- EC2 and RDS use separate Security Groups.
-- RDS port 3306 allows traffic only from `two-tier-ec2-sg`.
-- SSH access is restricted to the user's IP address.
-- HTTP access is provided through port 80.
+* EC2 is placed in a public subnet for web access.
+* RDS is not publicly accessible.
+* EC2 and RDS use separate Security Groups.
+* RDS port 3306 allows traffic only from `two-tier-ec2-sg`.
+* SSH access is restricted to the user's IP address.
+* HTTP access is provided through port 80.
 
 ## 13. Architecture
 
@@ -207,7 +205,8 @@ RDS MariaDB
 ```
 
 ### Architecture Diagram
-![AWS Architecture Diagram](architecture-diagram.png)
+
+![AWS Architecture Diagram](https://raw.githubusercontent.com/sakshisuryawanshi2195-arch/aws-two-tier-project/main/images/architecture-diagram.png)
 
 ## 14. Testing
 
@@ -227,4 +226,4 @@ The following tests were completed successfully:
 
 The AWS two-tier web application was successfully deployed using Amazon EC2 and Amazon RDS. The web server and database were separated into different network tiers, and Security Groups were configured to restrict database access to the EC2 application server.
 
-The connectivity and database operations were successfully tested.
+The connectivity and database testing demonstrated successful communication between the EC2 web server and the private RDS MariaDB database.
