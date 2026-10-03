@@ -47,6 +47,9 @@ The VPC resource map shows the public and private subnets, route tables and Inte
 
 ![VPC Resource Map](https://raw.githubusercontent.com/sakshisuryawanshi2195-arch/aws-two-tier-project/main/images/resource%20map1.png)
 
+![RDS Available](https://raw.githubusercontent.com/sakshisuryawanshi2195-arch/aws-two-tier-project/main/images/rs2.png)
+
+
 ## 6. EC2 Web Server Configuration
 
 **Instance Name:** `two-tier-web-server`
@@ -97,10 +100,6 @@ The web page displays:
 **Public Access:** No
 
 The RDS database is configured inside the same VPC and is not publicly accessible.
-
-### Screenshot
-
-![RDS Available](https://raw.githubusercontent.com/sakshisuryawanshi2195-arch/aws-two-tier-project/main/images/rs2.png)
 
 ## 9. RDS Security Group
 
