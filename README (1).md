@@ -57,7 +57,7 @@ The VPC resource map shows the public and private subnets, route tables and Inte
 Apache HTTP Server was installed on the EC2 instance:
 
 ```bash
-sudo dnf install httpd -y
+sudo yum install httpd -y
 sudo systemctl start httpd
 sudo systemctl enable httpd
 ```
